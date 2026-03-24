@@ -1,14 +1,3 @@
-"""
-Solara visualisation for the Job Market Actions model.
-
-Run with:
-    solara run app.py
-Opens at: http://localhost:8765
-
-No grid — this model has no spatial component.
-Visualisation shows employment status and hiring metrics over time.
-"""
-
 from mesa.visualization import SolaraViz, make_plot_component
 
 from model import JobMarket
@@ -56,8 +45,8 @@ employment_chart = make_plot_component(
 # Chart 2: Hiring method comparison
 hiring_chart = make_plot_component(
     {
-        "jobs_filled_by_employer": "tab:orange",
-        "jobs_filled_independently": "tab:purple",
+        "jobs_filled_by_interruption": "tab:orange",
+        "jobs_filled": "tab:purple",
     }
 )
 
