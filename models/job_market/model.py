@@ -351,15 +351,3 @@ if __name__ == "__main__":
 
 EmploymentPlot = make_plot_component(["employed", "searching", "inactive"])
 
-@solara.component
-def Page():
-    SolaraViz(
-        JobMarket(n_workers=20, n_employers=3, slots_per_employer=2, burnout_threshold=3, rng=42),
-        model_params={
-            "n_workers": solara.SliderInt("Workers", value=20, min=5, max=50),
-            "n_employers": solara.SliderInt("Employers", value=3, min=1, max=10),
-            "slots_per_employer": solara.SliderInt("Slots per Employer", value=2, min=1, max=5),
-            "burnout_threshold": solara.SliderInt("Burnout Threshold", value=3, min=1, max=10),
-        },
-        components=[EmploymentPlot],
-    )
